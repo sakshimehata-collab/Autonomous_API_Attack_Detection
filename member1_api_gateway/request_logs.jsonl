@@ -1,0 +1,5 @@
+{"ip": "127.0.0.1", "method": "GET", "endpoint": "/inspect", "headers": {"content_type": null}, "payload": {}, "timestamp": "2026-10-01T08:39:00.405286+00:00"}
+{"ip": "127.0.0.1", "method": "POST", "endpoint": "/inspect", "headers": {"content_type": "application/json"}, "payload": {"action": "login", "username": "test_user"}, "timestamp": "2026-10-01T08:40:17.580735+00:00"}
+{"ip": "127.0.0.1", "method": "POST", "endpoint": "/inspect", "headers": {"content_type": "application/json"}, "payload": {"password": "test123", "username": "admin"}, "timestamp": "2026-10-01T08:44:24.939092+00:00"}
+{"ip": "127.0.0.1", "method": "GET", "endpoint": "/inspect", "headers": {"content_type": null}, "payload": {}, "timestamp": "2026-10-01T08:45:28.490472+00:00"}
+{"ip": "127.0.0.1", "method": "GET", "endpoint": "/inspect", "headers": {"content_type": null}, "payload": {}, "timestamp": "2026-10-01T09:01:56.639193+00:00"}
