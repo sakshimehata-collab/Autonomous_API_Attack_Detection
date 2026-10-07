@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Autonomous API Security SOC</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+        SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">🛡</div>
+
+            <div>
+                <h1>API<span>GUARD</span></h1>
+                <p>SECURITY SOC</p>
+            </div>
+        </div>
+
+
+        <nav>
+
+            <a href="#" class="nav-item active">
+                <span>▣</span>
+                Overview
+            </a>
+
+            <a href="#threats" class="nav-item">
+                <span>⚠</span>
+                Threats
+            </a>
+
+            <a href="#events" class="nav-item">
+                <span>◉</span>
+                Security Events
+            </a>
+
+            <a href="#system" class="nav-item">
+                <span>⚙</span>
+                System Status
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="system-mini">
+
+                <div class="live-dot"></div>
+
+                <div>
+                    <strong>Protection Active</strong>
+                    <small>Monitoring API traffic</small>
+                </div>
+
+            </div>
+
+            <div class="member-label">
+                MEMBER 3<br>
+                DATABASE & MONITORING
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+        MAIN
+    ========================== -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+                <div class="breadcrumb">
+                    SECURITY OPERATIONS CENTER
+                </div>
+
+                <h2>
+                    Autonomous API Security
+                </h2>
+
+                <p>
+                    Real-time threat detection and API protection
+                </p>
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="live-status">
+                    <span class="live-dot"></span>
+                    LIVE MONITORING
+                </div>
+
+                <div class="last-updated">
+                    Last update:
+                    <span id="lastUpdated">--:--:--</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+            STATISTICS
+        ========================== -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card blue">
+
+                <div class="stat-top">
+                    <span>TOTAL REQUESTS</span>
+                    <div class="stat-icon">↗</div>
+                </div>
+
+                <div class="stat-number" id="totalRequests">
+                    0
+                </div>
+
+                <div class="stat-footer">
+                    API traffic monitored
+                </div>
+
+            </div>
+
+
+            <div class="stat-card red">
+
+                <div class="stat-top">
+                    <span>THREATS DETECTED</span>
+                    <div class="stat-icon">⚠</div>
+                </div>
+
+                <div class="stat-number" id="attacksDetected">
+                    0
+                </div>
+
+                <div class="stat-footer">
+                    Malicious activity identified
+                </div>
+
+            </div>
+
+
+            <div class="stat-card orange">
+
+                <div class="stat-top">
+                    <span>REQUESTS BLOCKED</span>
+                    <div class="stat-icon">⊘</div>
+                </div>
+
+                <div class="stat-number" id="blockedRequests">
+                    0
+                </div>
+
+                <div class="stat-footer">
+                    Threats prevented
+                </div>
+
+            </div>
+
+
+            <div class="stat-card green">
+
+                <div class="stat-top">
+                    <span>REQUESTS ALLOWED</span>
+                    <div class="stat-icon">✓</div>
+                </div>
+
+                <div class="stat-number" id="allowedRequests">
+                    0
+                </div>
+
+                <div class="stat-footer">
+                    Legitimate traffic
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+            DASHBOARD GRID
+        ========================== -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- THREAT ACTIVITY -->
+
+            <div class="panel threat-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-label">
+                            THREAT INTELLIGENCE
+                        </span>
+
+                        <h3>
+                            Attack Distribution
+                        </h3>
+                    </div>
+
+                    <span class="panel-live">
+                        ● LIVE
+                    </span>
+
+                </div>
+
+
+                <div id="attackChart" class="attack-chart">
+
+                    <div class="empty-chart">
+                        Waiting for security events...
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SYSTEM STATUS -->
+
+            <div class="panel" id="system">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-label">
+                            SYSTEM HEALTH
+                        </span>
+
+                        <h3>
+                            Security Services
+                        </h3>
+                    </div>
+
+                </div>
+
+
+                <div class="service-list">
+
+                    <div class="service">
+
+                        <div class="service-name">
+                            <span class="status-dot online"></span>
+
+                            <div>
+                                <strong>API Gateway</strong>
+                                <small>Traffic capture</small>
+                            </div>
+                        </div>
+
+                        <span class="online-text">
+                            ONLINE
+                        </span>
+
+                    </div>
+
+
+                    <div class="service">
+
+                        <div class="service-name">
+                            <span class="status-dot online"></span>
+
+                            <div>
+                                <strong>AI Detection Engine</strong>
+                                <small>Threat analysis</small>
+                            </div>
+                        </div>
+
+                        <span class="online-text">
+                            ONLINE
+                        </span>
+
+                    </div>
+
+
+                    <div class="service">
+
+                        <div class="service-name">
+                            <span class="status-dot online"></span>
+
+                            <div>
+                                <strong>Response Engine</strong>
+                                <small>Autonomous response</small>
+                            </div>
+                        </div>
+
+                        <span class="online-text">
+                            ONLINE
+                        </span>
+
+                    </div>
+
+
+                    <div class="service">
+
+                        <div class="service-name">
+                            <span class="status-dot online"></span>
+
+                            <div>
+                                <strong>Security Database</strong>
+                                <small>Event storage</small>
+                            </div>
+                        </div>
+
+                        <span class="online-text">
+                            ONLINE
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+            THREAT SUMMARY
+        ========================== -->
+
+        <section class="panel threat-summary" id="threats">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        SECURITY ANALYTICS
+                    </span>
+
+                    <h3>
+                        Threat Overview
+                    </h3>
+
+                </div>
+
+                <div class="risk-indicator">
+                    <span></span>
+                    ACTIVE PROTECTION
+                </div>
+
+            </div>
+
+
+            <div class="threat-metrics">
+
+                <div class="metric">
+
+                    <span>Detection Rate</span>
+
+                    <strong id="detectionRate">
+                        0%
+                    </strong>
+
+                    <div class="progress">
+                        <div id="detectionProgress"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="metric">
+
+                    <span>Block Rate</span>
+
+                    <strong id="blockRate">
+                        0%
+                    </strong>
+
+                    <div class="progress">
+                        <div id="blockProgress"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="metric">
+
+                    <span>Average Risk</span>
+
+                    <strong id="averageRisk">
+                        0
+                    </strong>
+
+                    <div class="risk-scale">
+                        <div id="riskProgress"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+            SECURITY EVENTS
+        ========================== -->
+
+        <section class="panel events-panel" id="events">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        EVENT STREAM
+                    </span>
+
+                    <h3>
+                        Recent Security Events
+                    </h3>
+
+                </div>
+
+                <span class="event-count" id="eventCount">
+                    0 EVENTS
+                </span>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>TIME</th>
+                            <th>REQUEST</th>
+                            <th>SOURCE</th>
+                            <th>ENDPOINT</th>
+                            <th>THREAT</th>
+                            <th>RISK</th>
+                            <th>STATUS</th>
+                            <th>ACTION</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="logsTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <span>
+                APIGUARD • Autonomous API Security Platform
+            </span>
+
+            <span>
+                MEMBER 3 • DATABASE & MONITORING
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
