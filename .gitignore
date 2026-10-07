@@ -14,3 +14,4 @@ __pycache__/
 
 # Python generated files
 *.log
+.pytest_cache/
