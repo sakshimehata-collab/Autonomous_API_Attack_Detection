@@ -1,17 +1,4 @@
-# Python virtual environment
 venv/
-.venv/
-
-# Python cache
 __pycache__/
 *.pyc
-
-# VS Code
-.vscode/
-
-# Environment variables
-.env
-
-# Python generated files
-*.log
-.pytest_cache/
+data/*.db
